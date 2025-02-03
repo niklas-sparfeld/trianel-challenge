@@ -1,0 +1,80 @@
+### Get empty requirements
+GET http://localhost:8080/spot-requirements
+
+### Add DEW21 requirements
+POST http://localhost:8080/spot-requirements
+Content-Type: application/json
+
+{
+    "day": "2025-02-03",
+    "customer": "DEW21",
+    "volumes": [
+      {
+        "amount": 100
+      },
+      {
+        "amount": 200
+      },
+      {
+        "amount": 300
+      },
+      {
+        "amount": 400
+      }
+    ]
+  }
+
+### Add Gelsenwasser requirements
+POST http://localhost:8080/spot-requirements
+Content-Type: application/json
+
+{
+  "day": "2025-02-03",
+  "customer": "Gelsenwasser",
+  "volumes": [
+    {
+      "amount": 10
+    },
+    {
+      "amount": 20
+    },
+    {
+      "amount": 30
+    },
+    {
+      "amount": 40
+    }
+  ]
+}
+
+### Show added requirements
+GET http://localhost:8080/spot-requirements
+
+### Show consolidated requirements
+GET http://localhost:8080/consolidated-spot-requirements/2025-02-03
+
+### Append (replace) Gelsenwasser requirements
+POST http://localhost:8080/spot-requirements
+Content-Type: application/json
+
+{
+  "day": "2025-02-03",
+  "customer": "Gelsenwasser",
+  "volumes": [
+    {
+      "amount": 1
+    },
+    {
+      "amount": 2
+    },
+    {
+      "amount": 3
+    },
+    {
+      "amount": 4
+    }
+  ]
+}
+
+### Show new consolidated requirements
+GET http://localhost:8080/consolidated-spot-requirements/2025-02-03
