@@ -10,6 +10,7 @@ class TrianelApplicationTests {
 
     @Test
     void contextLoads() {
+        // just to see whether the context loads
     }
 
 }

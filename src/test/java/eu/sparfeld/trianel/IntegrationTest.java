@@ -28,6 +28,8 @@ class IntegrationTest {
     @Autowired
     private WebTestClient client;
 
+    // Sonarlint Ignore number of assertions
+    @SuppressWarnings("java:S5961")
     @Test
     void testSpotRequirementsFlow() {
         // 1. Get empty requirements
